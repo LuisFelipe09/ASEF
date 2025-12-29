@@ -1,0 +1,6 @@
+graph LR
+    Client[Cliente HTTP] --> API[FastAPI App]
+    API --> Controller[User Controller]
+    Controller --> Service[User Service]
+    Service --> Repo[User Repository]
+    Repo --> DB[(SQLite DB)]
