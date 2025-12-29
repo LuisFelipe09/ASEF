@@ -69,3 +69,24 @@ Validación final antes del despliegue.
 * **Si hay error de seguridad:** El Centinela bloquea el proceso. El humano debe mediar y decidir si es un falso positivo o un riesgo real.
 
 ---
+
+## 7. Guía de Estructura de Carpetas (El Mapa Físico)
+
+Para que todo esto funcione, crea esta estructura en tu repositorio:
+
+```text
+/nombre-de-tu-proyecto
+├── README.md                 <-- (Documento 1: Manual Maestro)
+├── /docs
+│   ├── playbook.md           <-- (Documento 2: Guía paso a paso)
+│   ├── templates.md          <-- (Documento 3: Biblioteca de plantillas)
+│   ├── security-manifesto.md <-- (Documento 4: Manifiesto de Seguridad)
+│   ├── business-metrics.md   <-- (Documento 5: Dashboard de ROI)
+│   └── /adr                  <-- (Carpeta para los ADRs que generes)
+├── /templates                <-- (Archivos individuales para que la IA los lea)
+│   ├── adr-gherkin.md
+│   ├── agent-role.json
+│   └── sentinel-policies.yaml
+└── /rules
+    └── global-memory.md      <-- (Reglas inamovibles del proyecto)
+```

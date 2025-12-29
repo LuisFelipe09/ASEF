@@ -61,4 +61,17 @@ El **Agente Centinela** protege el sistema mediante:
 - Auditoría de cadena de suministro (Supply Chain).
 
 ---
+
+---
+
+## 7. Documentación Oficial
+Este repositorio contiene los manuales detallados para operar bajo el framework ASEF:
+
+*   **[Playbook Operativo](docs/playbook.md):** Guía paso a paso para el ciclo de vida de desarrollo.
+*   **[Biblioteca de Plantillas](docs/templates.md):** Estándares para ADRs, Roles de Agente y Políticas.
+*   **[Manifiesto de Seguridad](docs/security-manifesto.md):** Reglas del Agente Centinela y DevSecOps.
+*   **[Dashboard de Métricas](docs/business-metrics.md):** Cálculo de ROI y telemetría de infraestructura.
+
+---
+
 © 2025 - Framework ASEF por Felipe Marin
