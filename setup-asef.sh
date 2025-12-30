@@ -1,12 +1,42 @@
 #!/bin/bash
 
-# Crear estructura de carpetas
-mkdir -p docs/adr templates rules packages
+# setup-asef.sh: Inicializador de estructura ASEF
+# Crea la jerarquía de carpetas estándar para un nuevo proyecto.
 
-# Crear archivos base
-touch docs/playbook.md docs/templates.md docs/security-manifesto.md docs/business-metrics.qmd
-touch templates/adr-gherkin.md templates/agent-role.json templates/sentinel-policies.yaml
+echo "🏗️  Inicializando estructura ASEF..."
+
+# 1. Documentación y Arquitectura
+mkdir -p docs/adr
+mkdir -p docs/diagrams
+mkdir -p docs/meta-adr
+mkdir -p docs/manuals
+
+# 2. Configuración y Reglas
+mkdir -p rules
+mkdir -p templates
+
+# 3. Código y Pruebas (Estructura sugerida)
+mkdir -p src
+mkdir -p tests/features
+
+# Crear archivos placeholder si no existen
+touch docs/playbook.md
+touch docs/security-manifesto.md
+touch docs/business-metrics.md
+touch docs/manual-asef.md
 touch rules/global-memory.md
 
-echo "✅ Estructura del Framework ASEF inicializada correctamente."
-echo "Siguiente paso: Completa los archivos con el contenido del Manual Maestro."
+# Plantillas base
+touch templates/adr-gherkin.md
+touch templates/agent-role.json
+touch templates/sentinel-policies.yaml
+
+echo "✅ Estructura ASEF creada con éxito."
+echo ""
+echo "📂 Carpetas creadas:"
+echo "   /docs/adr         -> Guarda tus decisiones de arquitectura aquí"
+echo "   /docs/diagrams    -> Archivos fuente .mmd (Mermaid)"
+echo "   /docs/meta-adr    -> Evolución del propio framework"
+echo "   /tests/features   -> Escenarios Gherkin (.feature)"
+echo ""
+echo "🚀 ¡Listo para empezar la Fase A!"

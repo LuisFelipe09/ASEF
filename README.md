@@ -1,77 +1,46 @@
 # ASEF: Agentic Software Engineering Framework
-**Manual de Ingeniería de Software para la Era de los Agentes**
 
-## 1. Visión General
-ASEF es un marco de trabajo (framework) diseñado para orquestar la colaboración entre humanos y agentes de Inteligencia Artificial. Su objetivo es transformar ideas ambiguas en software de alta precisión, garantizando seguridad, eficiencia económica y coherencia arquitectónica.
+> **Producto de Conocimiento para la Ingeniería de Software Asistida por IA**
 
-## 2. Los Pilares Técnicos
-* **Agentic Workflows:** El trabajo se divide en fases de pensamiento, mapeo, ejecución y auditoría.
-* **Architecture-as-Code (AaC):** La arquitectura reside en archivos Markdown y Mermaid, no solo en la memoria de los agentes.
-* **AI-Native Org:** El repositorio está estructurado para que los agentes encuentren contexto relevante con el mínimo consumo de tokens.
+Bienvenido a ASEF. Este repositorio no es solo código; es un **sistema operativo** para equipos donde humanos y agentes colaboran.
 
----
+## 🚀 ¿Qué es ASEF? (Nivel 0: Explorador)
+ASEF es un framework que estructura la interacción con IAs de programación. Evita el "código espagueti" generado por LLMs mediante un flujo de trabajo estricto: **Primero Pensar (Arquitectura), Luego Escribir (Código)**.
 
-## 3. El Ciclo de Vida A-B-C-D-E
-
-### Fase A: Destilación (Arquitectura y Comportamiento)
-- **Actor:** IA de Alto Razonamiento (ej. Gemini 1.5 Pro).
-- **Entregable:** Un "Package de Verdad" que contiene el **ADR** (justificación técnica) y los **Escenarios Gherkin** (comportamiento).
-- **Regla de Oro:** Ningún código se escribe sin un contrato de Fase A aprobado.
-
-### Fase B: Contextualización (Mapeo e Infra)
-- **Actor:** IA de Procesamiento Rápido (ej. Gemini 1.5 Flash).
-- **Entregable:** Diagramas Mermaid y plantillas de Infraestructura como Código (IaC).
-- **Propósito:** Preparar el entorno y la visión sistémica.
-
-### Fase C: Ejecución (TDD Agéntico)
-- **Actor:** Agentes de IDE o modelos locales.
-- **Flujo:** Rojo-Verde-Refactor basado en los escenarios Gherkin.
-- **Optimización:** Uso de modelos económicos y poda de contexto para ahorrar tokens.
-
-### Fase D: Auditoría y Centinela (Seguridad y Calidad)
-- **Actor:** Agente Centinela (DevSecOps).
-- **Misión:** Validar que el código cumple con el ADR y las políticas de seguridad.
-- **Bucle de Retroalimentación:** Si hay fallos de diseño, el flujo vuelve a la Fase A.
-
-### Fase E: Estabilización y Telemetría
-- **Acción:** Ejecución de benchmarks locales y proyecciones de costo.
-- **Salida:** Reporte de rendimiento y validación de infraestructura.
+### Propuesta de Valor en 30 Segundos
+1.  **Cero Alucinaciones Arquitectónicas:** La IA debe escribir un ADR (Architecture Decision Record) antes de una sola línea de código.
+2.  **Seguridad por Diseño:** Un "Agente Centinela" audita cada cambio antes del merge.
+3.  **Economía de Tokens:** Optimizado para gastar poco usando modelos baratos para ejecución y modelos potentes para razonamiento.
 
 ---
 
-## 4. Gobernanza Humana (Checkpoints)
-El humano actúa como el Director de Orquesta en tres puntos críticos:
-1.  **Aprobación de ADR:** Antes de iniciar la construcción.
-2.  **Aprobación de Seguridad:** Validación de nuevas dependencias sugeridas por la IA.
-3.  **Aprobación de Merge:** Firma final tras el reporte de la Fase D.
+## 🗺️ El Camino del Aprendizaje (Learning Path)
+No intentes leer todo de golpe. Sigue este mapa según tu rol o necesidad actual:
+
+| Nivel | Documento | Objetivo |
+| :--- | :--- | :--- |
+| **0. Explorador** | **Estás aquí** | Entender qué es ASEF y su valor. |
+| **1. Arquitecto** | [📘 Manual del Arquitecto](docs/manual-asef.md) | Dominar las Fases A-B-C-D-E y la filosofía. |
+| **2. Operador** | [⚙️ Playbook Operativo](docs/playbook.md) | Guía paso a paso: Comandos y flujos diarios. |
+| **3. Auditor** | [🛡️ Manifiesto de Seguridad](docs/security-manifesto.md) | Reglas del Agente Centinela. |
+| **4. Manager** | [📊 Métricas de Negocio](docs/business-metrics.md) | ROI, Tokenomics y KPIs. |
 
 ---
 
-## 5. Eficiencia Económica (Tokenomics)
-- **Model Tiering:** Modelos potentes para planear, modelos ligeros para ejecutar.
-- **Stop-Loss:** Límite de 3 intentos en TDD antes de escalar a revisión humana.
-- **Métrica $E_t$:** Relación de líneas de código versus tokens consumidos.
+## 📂 Estructura del Repositorio
+* `/docs`: Toda la documentación teórica y práctica.
+* `/examples`: **Cofre de Ejemplos.** Proyectos reales implementados con ASEF para que copies y pegues patrones.
+* `/templates`: Plantillas para ADRs, Gherkin y Roles.
 
 ---
 
-## 6. Seguridad Agéntica
-El **Agente Centinela** protege el sistema mediante:
-- Bloqueo en tiempo real de secretos expuestos.
-- Defensa contra ataques de "Prompt Injection".
-- Auditoría de cadena de suministro (Supply Chain).
+## 🛠️ Instalación Rápida
+Para configurar la estructura de carpetas en un nuevo proyecto:
+
+```bash
+./setup-asef.sh
+```
 
 ---
 
----
-
-## 7. Documentación Oficial
-Este repositorio contiene los manuales detallados para operar bajo el framework ASEF:
-
-*   **[Playbook Operativo](docs/playbook.md):** Guía paso a paso para el ciclo de vida de desarrollo.
-*   **[Biblioteca de Plantillas](docs/templates.md):** Estándares para ADRs, Roles de Agente y Políticas.
-*   **[Manifiesto de Seguridad](docs/security-manifesto.md):** Reglas del Agente Centinela y DevSecOps.
-*   **[Dashboard de Métricas](docs/business-metrics.md):** Cálculo de ROI y telemetría de infraestructura.
-
----
-
-© 2025 - Framework ASEF por Felipe Marin
+© 2025 - Framework ASEF
