@@ -15,7 +15,7 @@ Para que los agentes trabajen de forma autónoma pero segura, ASEF se apoya en t
 
 * **Agentic Workflows:** El trabajo no es lineal; se divide en fases de pensamiento, mapeo, ejecución y auditoría.
 * **Architecture-as-Code (AaC):** La arquitectura reside en archivos Markdown y Mermaid, no solo en la memoria de los agentes. Esto permite que el conocimiento sea persistente y auditable.
-* **AI-Native Org:** La estructura de carpetas y archivos está optimizada para RAG (Retrieval-Augmented Generation), permitiendo que los agentes encuentren contexto relevante con el mínimo consumo de tokens.
+* **AI-Native Org:** La estructura de carpetas y archivos está diseñada para ser fácilmente legible por una IA, permitiendo que los agentes encuentren contexto relevante con el mínimo consumo de tokens.
 
 ---
 
@@ -49,12 +49,25 @@ ASEF sigue un flujo estricto para mitigar alucinaciones y errores.
 ```mermaid
 %%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#ffcc00', 'edgeLabelBackground':'#ffffff', 'tertiaryColor': '#fff0f0'}}}%%
 graph TD
-    A[Fase A: Destilación] -->|ADR + Gherkin| B(Fase B: Contextualización)
-    B -->|Mapas + IaC| C(Fase C: Ejecución)
-    C -->|Código| D{Fase D: Centinela}
-    D -- Aprobado --> E[Fase E: Estabilización]
-    D -- Rechazado --> C
+    subgraph Planning [Planeación y Arquitectura]
+        A[Fase A: Destilación] -->|ADR + Gherkin| B(Fase B: Contextualización)
+    end
+
+    subgraph Execution [Construcción]
+        B -->|Mapas + IaC| C(Fase C: Ejecución / TDD)
+    end
+
+    subgraph Audit [Calidad y Seguridad]
+        C -->|Código| D{Fase D: Centinela}
+        D -- Rechazado (Seguridad/Diseño) --> A
+        D -- Rechazado (Bug) --> C
+        D -- Aprobado --> E[Fase E: Estabilización]
+    end
+
     E -->|Merge Ready| F((Producción))
+
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style D fill:#faa,stroke:#f00,stroke-width:2px
 ```
 
 ---
